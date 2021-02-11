@@ -16,7 +16,7 @@ nplot = 100;     % Number of points for interpolation curve
 for i=1:nplot
   xi(i) = xr(1) + (xr(2)-xr(1))*(i-1)/(nplot-1);
   yi(i) = intrpf(xi(i),x,y);  % Use intrpf function to interpolate
-  f(i) = (y(i) -(yi-1))/ ((x(i) - x(i-1))
+  f(i)
 end
 %% * Plot the curve given by (xi,yi) and mark original data points
 plot(x,y,'*',xi,yi,'-');

@@ -5,16 +5,53 @@ clear all; help interpolation;
 % Make the surface plot described in 3.1.1
 % If your in-class work is stored in your partner's repository, add a 
 % display statement here to tell us your partner's name. 
+close all
+figure
+f=zeros(11,11);
+for i = 1 : 11
+    for j = 1 : 11
+        x(i) = i;
+        y(i) = i;
+        f(i,j) = i * sin(j);
+        
+    end
+end
+surf(x,y,f)
 
 
 %% Tutorial 2 exercise: while loops
 % Use a while loop with random numbers as described in 3.1.2
-
+x = 0;
+i = 0;
+while (x<.9)
+    x = rand(1,1);
+    i = i +1;
+end 
+    display(x)
+    display ( i)
+    
 
 %% Tutorial 2 exercise: if-then-else statements
 % Use if-then-else blocks to vary plot style as described in 3.1.3
-
-
+x = [0];
+sx = [0];
+hold on
+for i = 1 : 30
+    x(i) = i;
+    sx(i) = sqrt(i);
+    plot ( x(i), sx(i), 'k*')
+    pause(.2)
+    if (i == 5) 
+        plot (x(i),sx(i), 'ro')
+        pause(0.2)
+    elseif (i==15)
+        plot (x(i),sx(i),'go')
+        pause(0.2)
+    elseif (i == 25)
+        plot(x(i),sx(i),'mo')
+        pause(0.2)
+    end
+end
 %% Tutorial 2 exercise: Lagrange polynomials
 % Calculate and plot the derivative of the Lagrange polynominal, using
 % interp.m and intrpf.m as described in 3.2
